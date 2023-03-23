@@ -1,4 +1,7 @@
+import java.util.*;
+
 class Solution {
+	@SuppressWarnings("unchecked")
     public int makeConnected(int n, int[][] connections) {
         /*
          * Solution concept:
@@ -12,7 +15,7 @@ class Solution {
          * Repeat until all computers have been visited.
          * Return: extra_count >= disconnected_count ? disconnected_count : -1
          */
-        ArrayList<Integer>[] graph = new ArrayList[n];
+        ArrayList<Integer>[] graph = (ArrayList<Integer>[]) new ArrayList[n];
         boolean[] visited = new boolean[n];
         int groups = -1, extras = 0, i = 0, j = 0;
         createGraph(graph, connections, n);
